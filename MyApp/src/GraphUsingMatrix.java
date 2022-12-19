@@ -11,10 +11,17 @@ public class GraphUsingMatrix {
     void addEdgeDir(int from, int to){ // directed graph
         graph[from][to] = 1;
     }
+    void addEdge(int x, int y , int w){// undirected weighted
+        graph[x][y] = w;
+        graph[y][x] = w;
+    }
+    void addEdgeDir(int x,int y,int w){ // directed weighted
+        graph[x][y] = w;
+    }
     void printGraph(){
-        for(int i=0;i<graph.length;i++){
-            for(int j=0;j<graph[0].length;j++){
-                System.out.print(graph[i][j]);
+        for(int[] x: graph){
+            for(int j: x){
+                System.out.print(j+" ");
             }
             System.out.println();
         }
